@@ -1,0 +1,11 @@
+{
+  "name": "Dineo webservice doc",
+  "version": "0.0.1",
+  "description": "List of all RestFull webservice for the Dineo domain",
+  "title": "Dineo Docs",
+  "url" : "http://localhost/v1",
+  "template": {
+  	"withCompare": true,
+  	"withGenerator": true
+  }
+}
