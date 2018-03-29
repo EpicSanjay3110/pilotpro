@@ -35,12 +35,13 @@ $(function(){
     $("body").on('click','#login-submit', function(){
       console.log("entered reg...................");
       var data = {
-        "email" : $('#email_LOG').val(),
+        "email" : $('#username_LOG').val(),
         "password" : $('#password_LOG').val()
       };
+      console.log(data);
           NProgress.start();
           $.ajax({
-            method: 'GET',
+            method: 'POST',
             data: JSON.stringify(data),
             dataType : "json",
             contentType: "application/json; charset=utf-8",
