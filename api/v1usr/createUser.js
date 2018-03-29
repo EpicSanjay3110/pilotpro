@@ -5,6 +5,7 @@ const responseHandler = require('../../Library/responceHandler');
 
 
 let createAppUser = function (req, res){
+
     let fields  =  req.body;
 
     let newUser = new appUser({
@@ -21,6 +22,7 @@ let createAppUser = function (req, res){
           res.json(responseHandler.responseFailure("appUser creation failed",err));
         }
         else{
+                console.log(docs);
             res.json(responseHandler.responseSuccess("appUser Created",docs));
         }
       })

@@ -7,8 +7,8 @@ const jwt = require('jsonwebtoken');
 let appLogin  = function(req,res){
   let fields  = req.body;
   let password  = fields.password;
-  let emailId = fields.emailId;
-
+  let emailId = fields.email;
+console.log("heyyy i am heereree");
   appUser.findOne({user_emailid:emailId,password:password},function(err,resP){
       if (err){
           res.json(responseHandler.responseFailure("Login Failed",err));

@@ -56,3 +56,17 @@ var server=app.listen(app.get('port'), function() {
   var port =server.address().port;
   console.log('apns server running on https://localhost:'+port);
 });
+
+app.use(express.static(__dirname + '/public'));
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+//using body-parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+// use res.render to load up an ejs view file
+
+// routes
+app.get('/', function(req, res) {
+   // res.render();
+   res.render('../views/login.ejs', {layout: "layout", title: "login", page: "login"});
+});

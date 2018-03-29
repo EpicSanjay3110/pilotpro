@@ -1,0 +1,52 @@
+/* css for variable */
+
+$brand-primary:             #3f51b5 !default; 
+$bg-primary-dark:           #3142a2 !default; 
+$table-border:              #dddddd !default; 
+$input-border:              #cccccc !default; 
+$brand-secondary: 			#00bcd4 !default;
+$brand-primary-light:       #35459c !default;
+/* status */
+$status-completed:			#4caf50 !default;
+$status-changed:			#F44336 !default;
+$status-enroute:			#9C27B0 !default;
+$table-header-bg:           #d9edf7 !default;
+
+/* status code */
+
+.Cancelled{
+   color: #F44336;
+}
+.Delivered{
+    color: #388E3C;
+}
+.Pending{
+    color: #FF9800;
+}
+.Changed{
+    color: #1565C0;
+}
+.Accepted{
+  color:#00BCD4;
+}
+.Enroute{
+    color: #9C27B0;
+}
+.Check-and-Print{
+    color: #F9A825;
+}
+.Delivered{
+    color: #388E3C;
+}
+.ReadyforPickup{
+    color: #388E3C;
+}
+.Cancelled{
+    color: #F44336;
+}
+.Rejected{
+    color: #795548;
+}
+.Deleted{
+
+}

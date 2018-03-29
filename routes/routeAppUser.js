@@ -1,7 +1,8 @@
+
 const userCreate  = require('../api/v1usr/createUser');
 const userLogin = require('../api/v1usr/appUserLogin');
 
-module.exports  ={
+module.exports  = {
   '/api/v1/user/newAppUser':{
   methods:  ['POST'],
   fn: userCreate.createAppUser
