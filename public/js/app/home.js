@@ -37,7 +37,6 @@ $(function(){
   	})
 
     $("body").on('click','#login-submit', function(){
-      console.log("entered reg...................");
       var data = {
         "email" : $('#username_LOG').val(),
         "password" : $('#password_LOG').val()
@@ -52,15 +51,23 @@ $(function(){
             url: "/api/v1/user/appUserLogin",
             success: function(res){
               $.ajax({
-                method: 'GET',
+                method: 'POST',
                 data: JSON.stringify(data),
                 dataType : "json",
                 contentType: "application/json; charset=utf-8",
                 url: "/api/v1/user/appUserLogin",
                 success: function(res){
-                  console.log(res);
-                  toastr.options = {"positionClass":"toast-top-center"}
-                  NProgress.done();
+                  console.log(res.Success);
+                  if(res.Success){
+                    toastr.options = {"positionClass":"toast-top-center"}
+                    toastr["success"]("successfully logged");
+                    NProgress.done();
+                  }else{
+                    toastr.options = {"positionClass":"toast-top-center"}
+                    toastr["error"]("Login failed");
+                    NProgress.done();
+                  }
+
                 }, error: function(error){
                   console.log(error);
                   toastr.options = {"positionClass":"toast-top-center"}
