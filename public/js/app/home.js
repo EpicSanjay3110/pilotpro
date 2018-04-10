@@ -5,7 +5,7 @@ $(function(){
     var data = {
       "firstName" : $('#username_REG').val(),
       "lastName" : $('#username_REG').val(),
-      "phone" : "9488101641",
+      "phone" : "9877001631",
       "email" : $('#email_REG').val(),
       "password" : $('#password_REG').val(),
       "imageUrl" : "testHTTP:"
@@ -21,7 +21,11 @@ $(function(){
   					console.log(res);
 
             toastr.options = {"positionClass":"toast-top-center"}
-
+            toastr["success"]("User registered successfully");
+        		$("#login-form").delay(100).fadeIn(100);
+         		$("#register-form").fadeOut(100);
+        		$('#register-form-link').removeClass('active');
+        		$('#login-form-link').addClass('active');
   					NProgress.done();
   				}, error: function(error){
   					console.log(error);
@@ -47,9 +51,23 @@ $(function(){
             contentType: "application/json; charset=utf-8",
             url: "/api/v1/user/appUserLogin",
             success: function(res){
-              console.log(res);
-              toastr.options = {"positionClass":"toast-top-center"}
-              NProgress.done();
+              $.ajax({
+                method: 'GET',
+                data: JSON.stringify(data),
+                dataType : "json",
+                contentType: "application/json; charset=utf-8",
+                url: "/api/v1/user/appUserLogin",
+                success: function(res){
+                  console.log(res);
+                  toastr.options = {"positionClass":"toast-top-center"}
+                  NProgress.done();
+                }, error: function(error){
+                  console.log(error);
+                  toastr.options = {"positionClass":"toast-top-center"}
+                      toastr["error"](error);
+                  NProgress.done();
+                }
+              })
             }, error: function(error){
               console.log(error);
               toastr.options = {"positionClass":"toast-top-center"}

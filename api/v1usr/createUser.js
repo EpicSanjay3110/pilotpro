@@ -8,6 +8,8 @@ let createAppUser = function (req, res){
 
     let fields  =  req.body;
 
+    console.log(fields);
+
     let newUser = new appUser({
     firstName:fields.firstName,
     lastName:fields.lastName,

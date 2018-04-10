@@ -70,3 +70,8 @@ app.get('/', function(req, res) {
    // res.render();
    res.render('../views/login.ejs', {layout: "layout", title: "login", page: "login"});
 });
+
+app.get('/home', function(req, res) {
+   // res.render();
+   res.render('../views/main.ejs', {layout: "layout", title: "Welcome", page: "w"});
+});
